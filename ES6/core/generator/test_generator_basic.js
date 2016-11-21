@@ -1,8 +1,6 @@
 const caseName="learn the basic of generator:";
-const timeLog = function (content)
-{
-    console.log(`${new Date()}:${content}`)
-}
+const logger = require("../../util/timeLog").create();
+const expect = require('expect.js');
 
 describe(caseName, function () {
     let count = 1;
@@ -22,12 +20,14 @@ describe(caseName, function () {
 
     it('can use yield to stop/resume code execution.', function (done) {
 
+        this.timeout(3000);
+
         //define a generator
         function* genFunc() {
             // (A)
-            timeLog('First');
+            logger.log('First');
             yield;
-            timeLog('Second'); //this log will appear later then pre one,delay 2 seconds.
+            logger.log('Second'); //this log will appear later then pre one,delay 2 seconds.
         }
         const genObj = genFunc();
 
@@ -35,13 +35,15 @@ describe(caseName, function () {
 
         setTimeout(function () {
             genObj.next(); //delay 2 seconds to call next
+
+            //validate log time delay
+            expect(Math.abs(logger.getLatest(1).time - logger.getLatest(2).time-2000)).to.be.lessThan(100);
+
             done();
         },2000);
 
     });
 
-    it(' can ', function () {
 
-    });
 
 });

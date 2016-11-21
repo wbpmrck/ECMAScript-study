@@ -3,6 +3,11 @@ bin/
 gen/
 out/
 
+# node.js modules
+ES5/node_modules
+ES6/node_modules
+ES7/node_modules
+
 # Gradle files
 .idea/
 build/

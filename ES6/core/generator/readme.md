@@ -1,9 +1,12 @@
 # Pre-Requirements
 
-* Node.js installed (V6.9.1 in my mac)
-* At least one web browser installed(chrome,safari,IE,etc...)
+* Node.js installed (V6.9.1 on my mac)
+* <a href="https://mochajs.org">Mocha test runner</a> installed  (V3.1.2 on my mac)
 
 # Usage
 
-* use <a href="https://github.com/karma-runner/karma">Karmatest runner</a>  to run these study cases
+* npm install
+    * it will install the **"expect.js"** assertion framework.
+* use <a href="https://mochajs.org">mocha testrunner</a>  to run these study cases
+    * $ mocha --recursive
 * see the console log to validate the code output.
