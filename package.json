@@ -1,7 +1,11 @@
 {
-  "name": "application-name",
+  "name": "ecmascript-study",
   "version": "0.0.1",
   "devDependencies": {
+    "mocha": "^2.2.4",
     "chai": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=6.8.x"
   }
 }
